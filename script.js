@@ -50,6 +50,8 @@ let win = 'You win';
 let lose = 'You lose,computer wins';
 let tie = 'It is a tie';
 
+const button1 = document.querySelector('playerb');
+
 function game(){
     for (let i = 0; i< 5; i++){
         let playAns = prompt(`What's your choice?`);
