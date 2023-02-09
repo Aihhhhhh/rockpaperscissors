@@ -6,6 +6,7 @@ const cScore = document.getElementById('computerScore');
 const scoreMessage = document.getElementById('scoreMessage');
 const pSign = document.getElementById('playerSign');
 
+//add eventListeners to the elements
 rock.addEventListener('click',()=>{
     pSign.innerHTML = '<img src= "https://www.freepnglogos.com/images/blank.gif" alt="rock"></img>'
     playRound('rock',getRandomChoice());
@@ -19,7 +20,7 @@ scissors.addEventListener('click',()=>{
     pSign.innerHTML = '<img src="https://freepngimg.com/thumb/scissor/14-2-scissor-picture-thumb.png" alt = "scissors"></img>'
     playRound('paper',getRandomChoice());
 })
-
+//logic for the game
 function playRound(playerChoice, computerChoice){
     if(playerChoice.toLowerCase() === computerChoice){
         roundWinner = "tie";
@@ -40,14 +41,15 @@ function playRound(playerChoice, computerChoice){
         ){
             cScore.dataset.score = parseInt(cScore.dataset.score) +1;
             cScore.textContent = "COMPUTER: " + cScore.dataset.score;
-            roundWinner = "computer"
+            roundWinner = "computer";
         }
         console.log("computer: " + computerChoice  +"  player: " + playerChoice);
     }
+    //computer selection methodlogy
     function getRandomChoice(){
         let computerSign = document.getElementById("computerSign");
         let randomChoice = Math.floor(Math.random() * 3);
-        let randomChoiceText;
+        var randomChoiceText;
 
         switch(randomChoice){
             case 0:
@@ -61,6 +63,7 @@ function playRound(playerChoice, computerChoice){
             case 2:
                 computerSign.innerHTML = '<img src="https://freepngimg.com/thumb/scissor/14-2-scissor-picture-thumb.png" alt ="Scissors"></img>';
                 randomChoiceText="scissors";
+                break;
         }
         return randomChoiceText;
     }
