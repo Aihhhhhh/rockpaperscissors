@@ -5,10 +5,30 @@
         <title>RockPaperScissors</title>
         <script src="script.js" defer></script>
     </head>
-    <body>
-        <button id ="playerb">click here for player</button>
-        <button id ="compb">click here for computer selection</button>
-        <button id = "scoreb">click here for scores</button>
-
+     <body>
+        <header class = "heading">
+            <h1> ROCK PAPER SCISSORS GAME </h1>
+        </header>
+        <div class = "choice-Container">
+            <h2> Pick your choice</h2>
+            <h3 class = "score-message" id ="scoreMessage" >
+                FIRST TO SCORE FIVE POINTS WINS THE GAME
+            </h3>
+        </div>
+        <div class ="score-container">
+            <div class = "score-box">
+                <div class ="sign"  id="playerSign">?</div>
+                <h2 class ="score" id ="playerScore" data-score="0">PLAYER:0</h2>
+            </div>
+            <div class ="score-box">
+                <div class ="sign" id ="computerSign">?</div>
+                <h2 class = "score" id ="computerScore" data-score="0">COMPUTER:0</h2>
+            </div>
+        </div>
+        <div class="button-box">
+            <button input="image" src ="https://www.freepnglogos.com/images/blank.gif " id="rock"></button>
+            <button input ="image" src="https://png.pngtree.com/png-vector/20220624/ourmid/pngtree-torn-notebook-paper-coiled-paper-png-image_5316955.png" id ="paper"></button>
+            <button input="image" src="https://freepngimg.com/thumb/scissor/14-2-scissor-picture-thumb.png" id="scissors"></button>
+        </div>
     </body>
 </html>
