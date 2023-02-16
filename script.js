@@ -6,20 +6,21 @@ const cScore = document.getElementById('computerScore');
 const scoreMessage = document.getElementById('scoreMessage');
 const pSign = document.getElementById('playerSign');
 
-//add eventListeners to the elements
-rock.addEventListener('click',()=>{
-    pSign.innerHTML = '<img src= "https://www.freepnglogos.com/images/blank.gif" alt="rock"></img>'
-    playRound('rock',getRandomChoice());
-})
 
-paper.addEventListener('click',()=>{
+//add eventListeners to the elements
+rock.addEventListener('click', function(){
+    pSign.innerHTML = '<img src= "https://www.freepnglogos.com/images/blank.gif" alt="Rock"></img>'
+    playRound('rock',getRandomChoice());
+});
+
+paper.addEventListener('click',function(){
     pSign.innerHTML = '<img src="https://png.pngtree.com/png-vector/20220624/ourmid/pngtree-torn-notebook-paper-coiled-paper-png-image_5316955.png" alt="paper"></img>'
     playRound('paper',getRandomChoice());
-})
-scissors.addEventListener('click',()=>{
+});
+scissors.addEventListener('click',function(){
     pSign.innerHTML = '<img src="https://freepngimg.com/thumb/scissor/14-2-scissor-picture-thumb.png" alt = "scissors"></img>'
     playRound('paper',getRandomChoice());
-})
+});
 //logic for the game
 function playRound(playerChoice, computerChoice){
     if(playerChoice.toLowerCase() === computerChoice){
@@ -43,7 +44,8 @@ function playRound(playerChoice, computerChoice){
             cScore.textContent = "COMPUTER: " + cScore.dataset.score;
             roundWinner = "computer";
         }
-        console.log("computer: " + computerChoice  +"  player: " + playerChoice);
+        console.log("computer: " + computerChoice  +"  player: " + playerChoice + ", winner: " + roundWinner + "." );
+        winnerDefined(roundWinner, playerChoice, computerChoice);
     }
     //computer selection methodlogy
     function getRandomChoice(){
@@ -54,32 +56,37 @@ function playRound(playerChoice, computerChoice){
         switch(randomChoice){
             case 0:
                 computerSign.innerHTML = '<img src="https://www.freepnglogos.com/images/blank.gif" alt="Rock"></img>';
-                randomChoiceText ="rock";
+                randomChoiceText ='rock';
                 break;
             case 1:
                 computerSign.innerHTML = '<img src ="https://png.pngtree.com/png-vector/20220624/ourmid/pngtree-torn-notebook-paper-coiled-paper-png-image_5316955.png" alt="Paper"></img>'
-                randomChoiceText ="paper";
+                randomChoiceText ='paper';
                 break;
             case 2:
                 computerSign.innerHTML = '<img src="https://freepngimg.com/thumb/scissor/14-2-scissor-picture-thumb.png" alt ="Scissors"></img>';
-                randomChoiceText="scissors";
+                randomChoiceText='scissors';
                 break;
         }
         return randomChoiceText;
     }
 
-    function updateScoresMessage(winner, playerChoice, computerChoice){
-        let txtMessage = "";
-        if(winner ==="player"){
-            scoreMessage.textContent = "Player wins against the computer";
+    const winnerDefined = function(winner, playerChoice, computerChoice){
+        var txtMessage = '';
+        if (winner === 'player'){
+            scoreMessage.textContent = 'You win against the computer';
             return;
         }
-        if(winner === "computer"){
-            scoreMessage.textContent = "Computer wins against the player";
+        if(winner === 'computer'){
+            scoreMessage.textContent = 'Computer beats player';
             return;
         }
-        scoreMessage.textContent = `it's a tie between the player and computer`;
-    };
+        scoreMessage.textContent = 'Computer ties with player'
+
+    }
+
+
+
+    
 
 
 
