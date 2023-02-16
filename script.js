@@ -1,6 +1,27 @@
-const rock = document.querySelector('#rock');
-const paper = document.getElementById('#paper');
-const scissors = document.getElementById('#scissors');
+const game = ()=>{
+    let playerScore = 0;
+    let computerScore = 0;
+    let moves = 0;
+
+    const playGame = ()=>{
+        const rockBtn = document.querySelector('#rock');
+         const paperBtn = document.querySelector('#paper');
+         const scissorsBtn = document.querySelector('#scissors');
+         const playerOptions = [rockBtn, paperBtn, scissorsBtn];
+         const computerOptions = ['rock', 'paper', 'scissors']
+
+         //Function to start playing
+         playerOptions.forEach(option =>{
+            option.addEventListener('click', function(){
+                const movesLeft = document.querySelector('.moves-left')
+
+            }
+         
+
+
+    }
+
+
 const pScore = document.getElementById('playerScore');
 const cScore = document.getElementById('computerScore');
 const scoreMessage = document.getElementById('scoreMessage');
