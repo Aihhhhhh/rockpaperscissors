@@ -13,36 +13,32 @@ const game = ()=>{
          //Function to start playing
          playerOptions.forEach(option =>{
             option.addEventListener('click', function(){
-                const movesLeft = document.querySelector('.moves-left')
+                const movesLeft = document.querySelector('.moves-left');
+                moves++;
+                movesLeft.innerHTML = `MOVES LEFT ${10 - moves}`;
 
-            }
-         
+                const choiceNUmber = Math.floor(Math.random() *3);
+                const computerChoice = computerOptions[choiceNUmber];
 
+                //function to check who wins
+                winner(this.innerHTML, computerChoice);
 
+                //function to play when game is over
+                if(moves === 10){
+                    gameOver(playerOptions, movesLeft);
+                }
+            })
+        })
     }
-
-
+    /*    
 const pScore = document.getElementById('playerScore');
 const cScore = document.getElementById('computerScore');
 const scoreMessage = document.getElementById('scoreMessage');
 const pSign = document.getElementById('playerSign');
+ */   
 
 
-//add eventListeners to the elements
-rock.addEventListener('click', function(){
-    pSign.innerHTML = '<img src= "https://www.freepnglogos.com/images/blank.gif" alt="Rock"></img>'
-    playRound('rock',getRandomChoice());
-});
-
-paper.addEventListener('click',function(){
-    pSign.innerHTML = '<img src="https://png.pngtree.com/png-vector/20220624/ourmid/pngtree-torn-notebook-paper-coiled-paper-png-image_5316955.png" alt="paper"></img>'
-    playRound('paper',getRandomChoice());
-});
-scissors.addEventListener('click',function(){
-    pSign.innerHTML = '<img src="https://freepngimg.com/thumb/scissor/14-2-scissor-picture-thumb.png" alt = "scissors"></img>'
-    playRound('paper',getRandomChoice());
-});
-//logic for the game
+//function to decide winner
 function playRound(playerChoice, computerChoice){
     if(playerChoice.toLowerCase() === computerChoice){
         roundWinner = "tie";
