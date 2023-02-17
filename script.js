@@ -42,8 +42,8 @@ const pSign = document.getElementById('playerSign');
 //function to decide winner
     const winner = (playerChoice, computerChoice) =>{
         const results = document.querySelector('.result');
-        const playerScoreBoard = document.getElementById('.playerCount');
-        const computerScoreBoard = document.getElementById('.computerCount');
+        const playerScoreBoard = document.querySelector('.playerCount');
+        const computerScoreBoard = document.querySelector('.computerCount');
         
         if(playerChoice.toLowerCase() === computerChoice){
             results.textContent = "tie";
