@@ -5,13 +5,13 @@ const game = ()=>{
 
     const playGame = ()=>{
         const rockBtn = document.querySelector('#rock');
-         const paperBtn = document.querySelector('#paper');
-         const scissorsBtn = document.querySelector('#scissors');
-         const playerOptions = [rockBtn, paperBtn, scissorsBtn];
-         const computerOptions = ['rock', 'paper', 'scissors']
+        const paperBtn = document.querySelector('#paper');
+        const scissorsBtn = document.querySelector('#scissors');
+        const playerOptions = [rockBtn, paperBtn, scissorsBtn];
+        const computerOptions = ['rock', 'paper', 'scissors'];
 
          //Function to start playing
-         playerOptions.forEach(option =>{
+        playerOptions.forEach(option =>{
             option.addEventListener('click', function(){
                 const movesLeft = document.querySelector('.moves-left');
                 moves++;
@@ -39,31 +39,35 @@ const pSign = document.getElementById('playerSign');
 
 
 //function to decide winner
-function playRound(playerChoice, computerChoice){
-    if(playerChoice.toLowerCase() === computerChoice){
-        roundWinner = "tie";
+    function playRound(playerChoice, computerChoice){
+        const results = document.querySelector('.result');
+        const playerScoreBoard = document.getElementById('playerScore');
+        const computerScoreBoard = document.getElementById('computerScore');
+        if(playerChoice.toLowerCase() === computerChoice){
+            results.textContent = "tie";
     }
     if(
         (playerChoice.toLowerCase() === "rock" && computerChoice === "scissors")||
         (playerChoice.toLowerCase() === "scissors" && computerChoice === "paper")||
         (playerChoice.toLowerCase() === "paper" && computerChoice === "rock")
         ){
-            pScore.dataset.score = parseInt(pScore.dataset.score) +1;
-            pScore.textContent = "PLAYER: " + pScore.dataset.score;
-            roundWinner = "player";
+            playerScore.dataset.score = parseInt(playerScore.dataset.score) +1;
+            results.textContent = 'Player won against computer';
+            playerScoreBoard.textContent = playerScore;
         }
     if(
         (computerChoice === "rock" && playerChoice.toLowerCase()==="scissors")||
         (computerChoice === "scissors" && playerChoice.toLowerCase()==="paper")||
         (computerChoice === "paper" && playerChoice.toLowerCase() === "rock") 
         ){
-            cScore.dataset.score = parseInt(cScore.dataset.score) +1;
-            cScore.textContent = "COMPUTER: " + cScore.dataset.score;
-            roundWinner = "computer";
+            computerScore.dataset.score = parseInt(computerScore.dataset.score) +1;
+            results.textContent = 'Computer won against player';
+            computerScoreBoard.textContent = computerScore;
         }
-        console.log("computer: " + computerChoice  +"  player: " + playerChoice + ", winner: " + roundWinner + "." );
-        winnerDefined(roundWinner, playerChoice, computerChoice);
     }
+
+    
+
     //computer selection methodlogy
     function getRandomChoice(){
         let computerSign = document.getElementById("computerSign");
