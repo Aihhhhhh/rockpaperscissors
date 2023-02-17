@@ -13,14 +13,15 @@ const game = ()=>{
          //Function to start playing
         playerOptions.forEach(option =>{
             option.addEventListener('click', function(){
-                const movesLeft = document.querySelector('.moves-left');
+                const movesLeft = document.querySelector('.movesleft');
                 moves++;
-                movesLeft.innerHTML = `MOVES LEFT ${10 - moves}`;
+                movesLeft.innerText = `MOVES LEFT ${10 - moves}`;
 
                 const choiceNUmber = Math.floor(Math.random() *3);
                 const computerChoice = computerOptions[choiceNUmber];
 
                 //function to check who wins
+                winner(this.innerText, computerChoice);
 
 
                 //function to play when game is over
@@ -39,30 +40,34 @@ const pSign = document.getElementById('playerSign');
 
 
 //function to decide winner
-    function playRound(playerChoice, computerChoice){
+    const winner = (playerChoice, computerChoice) =>{
         const results = document.querySelector('.result');
         const playerScoreBoard = document.getElementById('playerScore');
         const computerScoreBoard = document.getElementById('computerScore');
+        
         if(playerChoice.toLowerCase() === computerChoice){
             results.textContent = "tie";
-    }
-    if(
-        (playerChoice.toLowerCase() === "rock" && computerChoice === "scissors")||
-        (playerChoice.toLowerCase() === "scissors" && computerChoice === "paper")||
-        (playerChoice.toLowerCase() === "paper" && computerChoice === "rock")
-        ){
-            playerScore++;
-            results.textContent = 'Player won against computer';
-            playerScoreBoard.textContent = playerScore;
-        }
-    if(
-        (computerChoice === "rock" && playerChoice.toLowerCase()==="scissors")||
-        (computerChoice === "scissors" && playerChoice.toLowerCase()==="paper")||
-        (computerChoice === "paper" && playerChoice.toLowerCase() === "rock") 
-        ){
-            computerScore++;
-            results.textContent = 'Computer won against player';
-            computerScoreBoard.textContent = computerScore;
+         }
+         if(
+            (playerChoice.toLowerCase() === "rock" && computerChoice === "scissors")||
+            (playerChoice.toLowerCase() === "scissors" && computerChoice === "paper")||
+            (playerChoice.toLowerCase() === "paper" && computerChoice === "rock")
+            )
+            {
+                playerScore++;
+                results.textContent = 'Player won against computer';
+                playerScoreBoard.textContent = playerScore;
+            }
+        if(
+            (computerChoice === "rock" && playerChoice.toLowerCase()==="scissors")||
+            (computerChoice === "scissors" && playerChoice.toLowerCase()==="paper")||
+            (computerChoice === "paper" && playerChoice.toLowerCase() === "rock") 
+            )
+            {
+                computerScore++;
+                results.textContent = 'Computer won against player';
+                computerScoreBoard.textContent = computerScore;
+            }
         }
     }
 
@@ -76,21 +81,21 @@ const pSign = document.getElementById('playerSign');
             option.style.display = 'none';
         })
 
-        chooseMove.innerHTML ='Game over!!';
+        chooseMove.innerText ='Game over!!';
         movesLeft.style.display = 'none';
 
         if (playerScore > computerScore){
-            result.textContent = 'You won the game!!';
+            result.innerText= 'You won the game!!';
             result.style.fontSize = '2rem';
             result.style.color = 'green';
         }
         else if (playerScore < computerScore){
-            result.textContent ='You lost the game!!';
+            result.innerText ='You lost the game!!';
             result.style.fontSize ='2rem';
             result.style.color = 'red';
         }
         else{
-            result.textContent ='A tie between you and the computer';
+            result.innerText ='A tie between you and the computer';
             result.style.fontSize = '2rem';
             result.style.color = 'Purple';
         }
