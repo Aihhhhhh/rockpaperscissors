@@ -66,44 +66,44 @@ const pSign = document.getElementById('playerSign');
         }
     }
 
+    //Function to decide winner
+    const gameOver = (playerOptions, movesLeft) =>{
+        const chooseMove = document.querySelector('.moves');
+        const result = document.querySelector('.result');
+        const reloadButton = document.querySelector('.reload');
+
+        playerOptions.forEach(option =>{
+            option.style.display = 'none';
+        })
+
+        chooseMove.innerHTML ='Game over!!';
+        movesLeft.style.display = 'none';
+
+        if (playerScore > computerScore){
+            result.textContent = 'You won the game!!';
+            result.style.fontSize = '2rem';
+            result.style.color = 'green';
+        }
+        else if (playerScore < computerScore){
+            result.textContent ='You lost the game!!';
+            result.style.fontSize ='2rem';
+            result.style.color = 'red';
+        }
+        else{
+            result.textContent ='A tie between you and the computer';
+            result.style.fontSize = '2rem';
+            result.style.color = 'Purple';
+        }
+
+        reloadButton.textContent = 'Restart';
+        reloadButton.style.display = 'flex';
+        reloadButton.addEventListener('click', ()=>{
+            window.location.reload();
+        })
+    }
+
+
     
-
-    //computer selection methodlogy
-    function getRandomChoice(){
-        let computerSign = document.getElementById("computerSign");
-        let randomChoice = Math.floor(Math.random() * 3);
-        var randomChoiceText;
-
-        switch(randomChoice){
-            case 0:
-                computerSign.innerHTML = '<img src="https://www.freepnglogos.com/images/blank.gif" alt="Rock"></img>';
-                randomChoiceText ='rock';
-                break;
-            case 1:
-                computerSign.innerHTML = '<img src ="https://png.pngtree.com/png-vector/20220624/ourmid/pngtree-torn-notebook-paper-coiled-paper-png-image_5316955.png" alt="Paper"></img>'
-                randomChoiceText ='paper';
-                break;
-            case 2:
-                computerSign.innerHTML = '<img src="https://freepngimg.com/thumb/scissor/14-2-scissor-picture-thumb.png" alt ="Scissors"></img>';
-                randomChoiceText='scissors';
-                break;
-        }
-        return randomChoiceText;
-    }
-
-    const winnerDefined = function(winner, playerChoice, computerChoice){
-        var txtMessage = '';
-        if (winner === 'player'){
-            scoreMessage.textContent = 'You win against the computer';
-            return;
-        }
-        if(winner === 'computer'){
-            scoreMessage.textContent = 'Computer beats player';
-            return;
-        }
-        scoreMessage.textContent = 'Computer ties with player'
-
-    }
 
 
 
