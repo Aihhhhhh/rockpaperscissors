@@ -42,8 +42,8 @@ const pSign = document.getElementById('playerSign');
 //function to decide winner
     const winner = (playerChoice, computerChoice) =>{
         const results = document.querySelector('.result');
-        const playerScoreBoard = document.getElementById('playerScore');
-        const computerScoreBoard = document.getElementById('computerScore');
+        const playerScoreBoard = document.getElementById('.playerCount');
+        const computerScoreBoard = document.getElementById('.computerCount');
         
         if(playerChoice.toLowerCase() === computerChoice){
             results.textContent = "tie";
@@ -54,8 +54,8 @@ const pSign = document.getElementById('playerSign');
             (playerChoice.toLowerCase() === "paper" && computerChoice === "rock")
             )
             {
-                playerScore++;
                 results.textContent = 'Player won against computer';
+                playerScore++;
                 playerScoreBoard.textContent = playerScore;
             }
         if(
@@ -64,12 +64,11 @@ const pSign = document.getElementById('playerSign');
             (computerChoice === "paper" && playerChoice.toLowerCase() === "rock") 
             )
             {
-                computerScore++;
                 results.textContent = 'Computer won against player';
+                computerScore++;
                 computerScoreBoard.textContent = computerScore;
             }
         }
-    }
 
     //Function to decide winner
     const gameOver = (playerOptions, movesLeft) =>{
@@ -109,7 +108,7 @@ const pSign = document.getElementById('playerSign');
 
     //calling the playRound function
     playGame();
-}
+};
 
 game();
 
