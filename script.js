@@ -102,6 +102,12 @@ const pSign = document.getElementById('playerSign');
         })
     }
 
+    //calling the playRound function
+    playGame();
+}
+
+game();
+
 
     
 
