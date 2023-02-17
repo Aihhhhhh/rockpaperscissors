@@ -21,7 +21,7 @@ const game = ()=>{
                 const computerChoice = computerOptions[choiceNUmber];
 
                 //function to check who wins
-                winner(this.innerHTML, computerChoice);
+
 
                 //function to play when game is over
                 if(moves === 10){
@@ -51,7 +51,7 @@ const pSign = document.getElementById('playerSign');
         (playerChoice.toLowerCase() === "scissors" && computerChoice === "paper")||
         (playerChoice.toLowerCase() === "paper" && computerChoice === "rock")
         ){
-            playerScore.dataset.score = parseInt(playerScore.dataset.score) +1;
+            playerScore++;
             results.textContent = 'Player won against computer';
             playerScoreBoard.textContent = playerScore;
         }
@@ -60,7 +60,7 @@ const pSign = document.getElementById('playerSign');
         (computerChoice === "scissors" && playerChoice.toLowerCase()==="paper")||
         (computerChoice === "paper" && playerChoice.toLowerCase() === "rock") 
         ){
-            computerScore.dataset.score = parseInt(computerScore.dataset.score) +1;
+            computerScore++;
             results.textContent = 'Computer won against player';
             computerScoreBoard.textContent = computerScore;
         }
