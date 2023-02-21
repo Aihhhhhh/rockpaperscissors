@@ -12,3 +12,10 @@
     color: blue;
     margin-bottom: 25px;
 }
+
+.choice-Container h2{
+    display: flex;
+    font-size: xx-large;
+    color: blueviolet;
+    margin-bottom: 25px;
+}
