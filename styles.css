@@ -55,7 +55,7 @@
     display:flex;
     justify-content: center;
     align-items: center;
-    margin-bottom: 30px;
+    margin-bottom: 40px;
 }
 .result{
     display: flex;
@@ -64,4 +64,10 @@
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     font-size: medium;
     margin-bottom: 30px;
+}
+
+.buttonreload{
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
