@@ -63,6 +63,7 @@
     border: none;
     border-radius: 10px;
     box-shadow: 0px 0px 2px 2px;
+    padding: 10px;
 }
 .button-boxes .paper{
     background-color: aquamarine;
@@ -70,6 +71,7 @@
     border: none;
     border-radius: 10px;
     box-shadow: 0px 0px 2px 2px;
+    padding: 10px;
 }
 .button-boxes .scissors{
     background-color: aquamarine;
@@ -77,6 +79,7 @@
     border: none;
     border-radius: 10px;
     box-shadow: 0px 0px 2px 2px;
+    padding: 10px;
 }
 .result{
     display: flex;
