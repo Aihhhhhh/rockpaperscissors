@@ -57,6 +57,18 @@
     align-items: center;
     margin-bottom: 40px;
 }
+.button-boxes .rock{
+    background-color: aquamarine;
+    color:#0a0a03;
+}
+.button-boxes .paper{
+    background-color: aquamarine;
+    color: #0a0a03;
+}
+.button-boxes .scissors{
+    background-color: aquamarine;
+    color:#0a0a03;
+}
 .result{
     display: flex;
     justify-content: center;
