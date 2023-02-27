@@ -19,3 +19,12 @@
     color: blueviolet;
     margin-bottom: 25px;
 }
+
+.choice-Container h3{
+    margin-bottom: 20px;
+}
+.movesleft{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
