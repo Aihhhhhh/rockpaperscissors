@@ -27,4 +27,25 @@
     display:flex;
     justify-content: center;
     align-items: center;
+    font-size: large;
+    font-family: 'Courier New', Courier, monospace;
+    margin-bottom: 15px;
+}
+.score-box{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+.score-box h2{
+    text-shadow: 4px 2px 2px red;
+}
+.playerCount{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.computerCount{
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
