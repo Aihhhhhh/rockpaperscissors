@@ -43,9 +43,17 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    font-size: xx-large;
 }
 .computerCount{
     display: flex;
     justify-content: center;
     align-items: center;
+    font-size: xx-large;
+}
+.button-boxes{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 30px;
 }
