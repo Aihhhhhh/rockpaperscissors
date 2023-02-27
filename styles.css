@@ -83,3 +83,7 @@
     justify-content: center;
     align-items: center;
 }
+.buttonreload.reload{
+    background-color: aquamarine;
+    color: #0a0a03;
+}
