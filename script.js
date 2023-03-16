@@ -83,7 +83,7 @@ const pSign = document.getElementById('playerSign');
         chooseMove.innerText ='Game over!!';
         movesLeft.style.display = 'none';
 
-        if ((playerScore ===5)&& (computerScore > playerScore)){
+        if ((playerScore ===5)&& (playerScore> computerScore)){
             result.innerText= 'You won the game!!';
             result.style.fontSize = '2rem';
             result.style.color = 'green';
