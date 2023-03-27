@@ -83,17 +83,16 @@ const pSign = document.getElementById('playerSign');
         chooseMove.innerText ='Game over!!';
         movesLeft.style.display = 'none';
 
-        if ((playerScore ===5)&& (playerScore> computerScore)){
+        if (playerScore> computerScore){
             result.innerText= 'You won the game!!';
             result.style.fontSize = '2rem';
             result.style.color = 'green';
         }
-        else if ((computerScore=== 5 )&& (computerScore > playerScore)){
+        else if (computerScore > playerScore){
             result.innerText ='You lost the game!!';
             result.style.fontSize ='2rem';
             result.style.color = 'red';
-        }
-        else{
+        }else{
             result.innerText ='A tie between you and the computer';
             result.style.fontSize = '2rem';
             result.style.color = 'Purple';
